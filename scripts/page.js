@@ -346,6 +346,8 @@ window.addEventListener('touchstart', function(e){
         startY = touchobj.pageY;
         startTime = new Date().getTime() // record time when finger first makes contact with surface
         //e.preventDefault()
+        console.log(startX)
+
     }, false)
  
 window.addEventListener('touchmove', function(e){
@@ -357,7 +359,7 @@ window.addEventListener('touchend', function(e){
         dist = touchobj.pageX - startX; // get total dist traveled by finger while in contact with surface
         dist2 = startX - touchobj.pageX;
         elapsedTime = new Date().getTime() - startTime // get time elapsed
-        console.log(startX + " " + touchobj.pageX)
+        console.log(touchobj.pageX)
         // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
         var swipeRightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
         var swipeLeftBol = (elapsedTime <= allowedTime && dist2 >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
