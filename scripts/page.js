@@ -346,7 +346,7 @@ window.addEventListener('touchstart', function(e){
         startY = parseInt(touchobj.clientY);
         startTime = new Date().getTime() // record time when finger first makes contact with surface
         //e.preventDefault()
-        console.log("start"+startX)
+        console.log("start "+parseInt(touchobj.clientX))
 
     }, false)
  
