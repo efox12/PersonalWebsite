@@ -308,7 +308,7 @@ function updateYPos(){
     }
 }
 
-var touchsurface = document.getElementById('touchsurface'),
+var touchsurface,
         startX,
         startY,
         dist,
@@ -336,8 +336,8 @@ var touchsurface = document.getElementById('touchsurface'),
         }
     }
  
-    touchsurface.addEventListener('touchstart', function(e){
-        touchsurface.innerHTML = ''
+window.addEventListener('touchstart', function(e){
+        //touchsurface.innerHTML = ''
         var touchobj = e.changedTouches[0]
         dist = 0
         startX = touchobj.pageX
@@ -346,11 +346,11 @@ var touchsurface = document.getElementById('touchsurface'),
         e.preventDefault()
     }, false)
  
-    touchsurface.addEventListener('touchmove', function(e){
+window.addEventListener('touchmove', function(e){
         e.preventDefault() // prevent scrolling when inside DIV
     }, false)
  
-    touchsurface.addEventListener('touchend', function(e){
+window.addEventListener('touchend', function(e){
         var touchobj = e.changedTouches[0]
         dist = touchobj.pageX - startX // get total dist traveled by finger while in contact with surface
         elapsedTime = new Date().getTime() - startTime // get time elapsed
