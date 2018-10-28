@@ -312,7 +312,7 @@ var touchsurface,
         startX,
         startY,
         dist,
-        threshold = 50, //required min distance traveled to be considered swipe
+        threshold = 25, //required min distance traveled to be considered swipe
         allowedTime = 200, // maximum time allowed to travel that distance
         elapsedTime,
         startTime
@@ -356,6 +356,7 @@ window.addEventListener('touchend', function(e){
         dist = touchobj.screenX - startX; // get total dist traveled by finger while in contact with surface
         dist2 = startX - touchobj.screenX;
         elapsedTime = new Date().getTime() - startTime // get time elapsed
+        console.log(startX + " " + touchobj.screenX)
         // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
         var swipeRightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.screenY - startY) <= 100)
         var swipeLeftBol = (elapsedTime <= allowedTime && dist2 >= threshold && Math.abs(touchobj.screenY - startY) <= 100)
