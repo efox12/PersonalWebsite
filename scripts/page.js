@@ -312,6 +312,7 @@ var touchsurface,
         startX,
         startY,
         dist,
+        dist2,
         threshold = 25, //required min distance traveled to be considered swipe
         allowedTime = 200, // maximum time allowed to travel that distance
         elapsedTime,
@@ -344,11 +345,11 @@ window.addEventListener('touchstart', function(e){
         startX = touchobj.screenX;
         startY = touchobj.screenY;
         startTime = new Date().getTime() // record time when finger first makes contact with surface
-        e.preventDefault()
+        //e.preventDefault()
     }, false)
  
 window.addEventListener('touchmove', function(e){
-        e.preventDefault() // prevent scrolling when inside DIV
+        //e.preventDefault() // prevent scrolling when inside DIV
     }, false)
  
 window.addEventListener('touchend', function(e){
