@@ -1,0 +1,644 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; 
+    background: ghostwhite;
+    font-family: Montserrat;
+    font-size: 100%;
+}
+
+#nav {
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+#nav ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-height: 50px;
+    text-align: center;
+    visibility: visible;
+    transition: all 250ms ease-in;
+}
+#nav ul li a {
+    color: black;
+}
+
+#resume:hover {
+    display: block;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.05);
+}
+
+#resume:active {
+    background-color: rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+}
+
+h3 {
+    text-align: left;
+}
+.content {
+    width: 100%;
+}
+
+.section{
+    clear: both;
+    background-color: white;
+    padding: 0 10% 5% 10%;
+    border-top-width: 2px;
+    border-top-color: black;
+    border-top-style: solid;
+}
+
+/*about*/
+.about>h1{
+    margin: 0 5 0 5;
+    padding: 50 0 20 0;
+    text-align: left;
+}
+
+/*portfolio*/
+
+.portfolio>li {
+    display: inline-block;
+    text-align: left;
+    margin: 0px;
+    padding: 10%;
+    font-weight: bold;
+    width: auto;
+    height: auto;
+    transition: box-shadow 250ms ease-in;
+    position: relative;
+    overflow: auto;
+}
+
+.portfolio>li:hover {
+    box-shadow:0px 0px 5px rgba(0,0,0,.5);
+    transition: box-shadow 250ms ease-in;
+}
+
+.portfolio li h3 {
+    width: 100%;
+    margin: 10 0 5 0;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.portfolio li p {
+    width: 100%;
+    margin: 5 0 5 0;
+    font-weight: normal;    
+}
+
+#tabs {
+    background-image: url(../pictures/tabs.png);
+    background-size: cover;
+}
+#othello {
+    background-image: url(../pictures/othello.png);
+    background-size: cover;
+}
+#spotify {
+    background-image: url(../pictures/spotify.png);
+    background-size: cover;
+}
+#yahduot {
+    background-image: url(../pictures/yahduot.png);
+    background-size: cover;
+}
+#genetic {
+    background-image: url(../pictures/ga.png);
+    background-size: cover;
+}
+#interpreter {
+    background-image: url(../pictures/interpreter.png);
+    background-size: cover;
+}
+#website {
+    background-image: url(../pictures/website.png);
+
+    background-size: cover;
+}
+#leaderboard {
+    background-image: url(../pictures/leaderboard.png);
+    background-size: cover;
+}
+#game {
+    background-image: url(../pictures/game.png);
+    background-size: cover;
+}
+
+.languages {
+    display: block;
+    padding: 0;
+    margin: 5 0 5 0;
+}
+
+.languages li {
+    display: inline-block;
+    border-color: rgba(0,0,0,.5);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+
+    padding: 2 5 2 5;
+    margin: 5 5 5 0;
+
+    font-weight: lighter;
+    font-size: small;
+
+}
+
+/* experience */
+.experience {
+    text-align: center;
+    overflow:auto;
+}
+
+#experience {
+    background-color: rgba(247, 38, 38, 0.285);
+}
+
+.experience>h1{
+    margin: 0 5 0 5;
+    padding: 50 0 20 0;
+    text-align: left;
+}
+
+/* languages */
+.school {
+    display: block;
+    text-align: center;
+}
+
+.school>h3 {
+    text-align: center;
+}
+
+.school ul {
+    padding: 0;
+    margin: 0;
+}
+
+.school ul li {
+    display: inline-block;
+    border-color: rgba(0,0,0,.5);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    margin: 2 0 2 0;
+    padding: 2 5 2 5;
+
+    font-weight: lighter;
+    font-size: small;
+
+}
+
+#school {
+    padding: 0 10% 20 10%;
+    background-color: whitesmoke;
+
+}
+
+/* contact */
+#contact {
+    background-color: rgba(31, 168, 31, 0.251);
+}
+
+.contactInfo {
+    text-align: center;
+}
+.contactInfo>h1{
+    margin: 0 5 0 5;
+    padding: 50 0 20 0;
+    text-align: left;
+}
+
+.mail {
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    border-color: rgba(0,0,0,0);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    transition: all 250ms ease-in;
+    padding: 20px;
+}
+
+.mail:hover {
+    box-shadow:0px 0px 5px rgba(0,0,0,.5);
+    border-color: rgba(0,0,0,.5);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    transition: all 250ms ease-in;
+}
+
+.mail p {
+    text-decoration-line: underline !important;
+    text-decoration-color: black !important;
+    color: black;
+}
+
+.mail>img{
+    object-fit: fill;
+    width: 50px;
+    height: auto;
+}
+footer {
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
+    background: ghostwhite;
+}
+
+
+
+/*desktop*/
+@media (min-width: 768px) {
+    header {
+        padding: 100 0 0 0;
+        margin: 0;
+        width: 100%;
+        height: auto;
+
+        background: ghostwhite;
+        box-shadow: 0px 0px 0px rgba(0,0,0,0);
+
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+
+    header h1 {
+        font-size: 3rem;    
+        padding: 0 0 10 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #scroll_name {
+        text-align: center;
+        float: left;
+        padding: 0 10% 0 10%;
+    }
+
+    #name {
+        opacity: 0;
+        transition: opacity 250ms ease-in;
+    }
+
+    #hamburger {
+        display: none;
+        opacity: 0;
+    }
+    #drawer {
+        display: none;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    #nav ul li {
+        display: inline-block;
+        margin: 0;
+        padding: 10px 10px 20px 10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: ghostwhite;
+        color: black;
+        cursor: pointer;
+    }
+    #nav ul li:hover {
+        background: whitesmoke !important;
+        border-bottom-width: 2px !important;
+        border-bottom-color: black !important;
+        border-bottom-style: solid !important;
+    }
+
+    #resume {
+        z-index: 1;
+        display: block;
+        position: absolute;
+        height: auto;
+        width: auto;
+        bottom: 6%;
+        right: 10%;
+        padding: 10;
+        text-decoration: none;
+        color: black;
+        border-color: rgba(0,0,0,.5);
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5px;
+    }
+
+    .about {
+        padding-top: 250px
+    }
+
+    .about p {
+        width: 61.8%;
+    }
+
+    .portfolio {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    #portfolio {
+        background-color: rgba(27, 36, 158, 0.281);
+    }
+
+    #portfolio>h1{
+        margin: 0 5 0 5;
+        padding: 50 0 20 0;
+        text-align: left;
+    }
+
+    .portfolio {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 0;
+    }
+
+    .portfolio>li {
+        display: inline-block;
+        text-align: left;
+        margin: 0px;
+        padding: 10%;
+        font-weight: bold;
+        width: auto;
+        height: auto;
+        transition: box-shadow 250ms ease-in;
+        position: relative;
+        overflow: auto;
+    }
+
+    .portfolio>li:hover {
+        box-shadow:0px 0px 5px rgba(0,0,0,.5);
+        transition: box-shadow 250ms ease-in;
+    }
+    .panel {
+        width: 100%;
+        height: 20vw;
+        margin: 5 0 5 0;
+    }
+
+    .github img{
+        object-fit: fill;
+        width: 10%;
+        height: auto;
+
+        position:absolute;
+        bottom:25;
+        right:25;
+
+        opacity: 0;
+        transition: all 150ms ease-in;
+    }
+
+    .portfolio>li:hover .github img{
+        opacity: 1;
+        transition: all 150ms ease-in;
+
+    }
+
+    /*experience*/
+    .work {
+        margin-left: 10px;
+        margin-right: 10%;
+        padding: 0;
+        max-width: 50%;
+        
+        display: block;
+        text-align: left;
+        float: left;
+    }
+
+    .classes {
+        list-style-image: url("list.svg");
+        list-style-position: inside;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 0;
+        display: block;
+        max-width: 400;
+        text-align: left;
+        float: left;
+    }
+}
+
+/*mobile*/
+@media (max-width: 768px) {
+    header {
+        padding: 50px 0px 0px 0px;
+        margin: 0;
+        width: 100%;
+        height: auto;
+    
+        background: ghostwhite;
+        box-shadow: 0px 0px 0px rgba(0,0,0,0);
+    
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+    
+    header h1 {
+        font-size: 3rem;    
+        padding: 0 0 10 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #scroll_name {
+        display: block;
+        padding: 10 0 10 0;
+        margin: 0 10% 0 10%;
+    }
+    
+    #hamburger {
+        float: left;
+        object-fit: fill;
+        height: 30;
+        opacity: 0;
+    }
+    #name {
+        margin: auto;
+        width: fit-content;
+        opacity: 0;
+        transition: none;
+    }
+    #nav {
+        display: block;
+    }
+
+    #nav ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+        max-height: 50px;
+        text-align: center;
+        visibility: visible;
+        transition: all 250ms ease-in;
+    }
+
+    #nav ul li {
+        display: inline-block;
+        margin: 0;
+        padding: 10px 10px 20px 10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: ghostwhite;
+        color: black;
+        cursor: pointer;
+    }
+
+    #nav ul li:hover {
+        background: whitesmoke !important;
+    }
+
+    #resume {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        bottom: 5%;
+        right: 5%;
+        padding: 5;
+        text-decoration: none;
+        color: black;
+        border-color: rgba(0,0,0,.5);
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5px;
+    }
+
+    #drawer {
+        display: block;
+        background: ghostwhite;
+        margin: 0;
+        padding: 0;
+        width: 0%;
+        position: absolute;
+        left: 0;
+        transition: all 250ms ease-in;
+        overflow: hidden;
+    }
+    
+    header #drawer ul {
+        display: block;
+        width: 100%;
+        float: left;
+
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        visibility: visible;
+        white-space: nowrap;
+        list-style-type: none;
+        transition: all 250ms ease-in;
+    }
+    
+    #drawer ul li {
+        display: block;
+        margin: 0;
+        padding: 20px 20px 20px 20px;
+        background: ghostwhite;
+        color: black;
+        cursor: pointer;
+        transition: all 250ms ease-in;
+    }
+    
+    #nav ul li:hover {
+        background: whitesmoke !important;
+        border-bottom-width: 2px !important;
+        border-bottom-color: black !important;
+        border-bottom-style: solid !important;
+    }
+    #drawer ul li:hover {
+        background: whitesmoke !important;
+    }
+    
+    .about {
+        padding-top: 150px
+    }
+    
+    .about p {
+        width: 100%;
+    }
+    
+    /*portfolio mobile*/
+    .portfolio {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 0;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #portfolio {
+        background-color: rgba(27, 36, 158, 0.281);
+        padding: 0;
+    }
+    
+    #portfolio>h1{
+        margin: 0;
+        padding: 50 0 20 10%;
+        text-align: left;
+    }
+    
+    .panel {
+        width: 100%;
+        height: 50vw;
+        margin: 5 0 5 0;
+    }
+    
+    .github img{
+        object-fit: fill;
+        width: 10%;
+        height: auto;
+    
+        position:absolute;
+        bottom:25;
+        right:25;
+    
+        opacity: 1;
+        transition: all 150ms ease-in;
+    }
+    
+    /*experience mobile*/
+    .work {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        
+        display: block;
+        text-align: left;
+        float: left;
+    
+    }
+    
+    .classes {
+        list-style-image: url("list.svg");
+        list-style-position: inside;
+        margin: 0px;
+        padding: 0;
+        display: block;
+        max-width: 400;
+        text-align: left;
+        float: left;
+    }
+}
