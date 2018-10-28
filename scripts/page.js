@@ -317,7 +317,7 @@ var touchsurface,
         elapsedTime,
         startTime
  
-    function handleswipe(isrightswipe){
+    function handleswipe(isrightswipe, isSwipeLeft){
         if (isrightswipe){
             clicked = true;
             drawer.style.width = "40%";
@@ -326,7 +326,7 @@ var touchsurface,
             drawer1.style.opacity = "1";
             drawer2.style.opacity = "1";
             drawer3.style.opacity = "1";
-        } else{
+        } else if (isSwipeLeft){
             drawer.style.width = "0%";
 
             drawer0.style.opacity = "0";
@@ -353,9 +353,12 @@ window.addEventListener('touchmove', function(e){
 window.addEventListener('touchend', function(e){
         var touchobj = e.changedTouches[0]
         dist = touchobj.pageX - startX // get total dist traveled by finger while in contact with surface
+        dist2 = startX - touchobj.pageX
         elapsedTime = new Date().getTime() - startTime // get time elapsed
         // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
-        var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
-        handleswipe(swiperightBol)
+        var swipeRightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
+        var swipeLeftBol = (elapsedTime <= allowedTime && dist2 >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
+        
+        handleswipe(swipeRightBol, swipeLeftBol)
         e.preventDefault()
   }, false)
