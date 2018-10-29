@@ -1,5 +1,4 @@
 "use strict"
-let title = document.getElementById("title");
 let navBar = document.getElementById("scroll_name");
 let scrollName = document.getElementById("name");
 let hamburger = document.getElementById("menuToggle");

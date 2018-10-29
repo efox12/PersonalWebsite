@@ -41,7 +41,6 @@ h1 {
   text-align: center;
   margin: 0;
 }
-
 h3 {
     text-align: left;
 }
@@ -150,7 +149,7 @@ h3 {
     border-radius: 5px;
 
     padding: 2 5 2 5;
-    margin: 5 5 5 0;
+    margin: 2 0 2 0;
 
     font-weight: lighter;
     font-size: small;
@@ -193,25 +192,6 @@ h3 {
 
 .school>h3 {
     text-align: center;
-}
-
-.school ul {
-    padding: 0;
-    margin: 0;
-}
-
-.school ul li {
-    display: inline-block;
-    border-color: rgba(0,0,0,.5);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    margin: 2 0 2 0;
-    padding: 2 5 2 5;
-
-    font-weight: lighter;
-    font-size: small;
-
 }
 
 #school {
@@ -507,6 +487,8 @@ footer {
         opacity: 0;
         transition: none;
     }
+
+    /*navbar mobile*/
     #nav {
         display: block;
     }
@@ -536,6 +518,14 @@ footer {
         background: whitesmoke !important;
     }
 
+    #nav ul li:hover {
+        background: whitesmoke !important;
+        border-bottom-width: 2px !important;
+        border-bottom-color: black !important;
+        border-bottom-style: solid !important;
+    }
+
+    /*resume button mobile*/
     #resume {
         display: block;
         position: absolute;
@@ -551,6 +541,7 @@ footer {
         border-radius: 5px;
     }
 
+    /*drawer mobile*/
     #drawer {
         display: block;
         background: ghostwhite;
@@ -563,7 +554,7 @@ footer {
         overflow: hidden;
     }
     
-    header #drawer ul {
+    #drawer ul {
         display: block;
         width: 100%;
         float: left;
@@ -588,16 +579,11 @@ footer {
         box-shadow: 0px -10px 0px -10px rgba(0,0,0,.5);
     }
     
-    #nav ul li:hover {
-        background: whitesmoke !important;
-        border-bottom-width: 2px !important;
-        border-bottom-color: black !important;
-        border-bottom-style: solid !important;
-    }
     #drawer ul li:hover {
         background: whitesmoke !important;
     }
     
+    /*about mobile*/
     .about {
         padding-top: 150px
     }
@@ -637,11 +623,9 @@ footer {
         object-fit: fill;
         width: 10%;
         height: auto;
-    
         position:absolute;
         bottom:25;
         right:25;
-    
         opacity: 1;
         transition: all 150ms ease-in;
     }
