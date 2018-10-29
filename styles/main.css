@@ -173,6 +173,18 @@ h3 {
     text-align: left;
 }
 
+.experience h4{
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0;
+    width: 50%;
+}
+
+.date {
+    vertical-align: bottom;
+    float: right;
+}
+
 /* languages */
 .school {
     display: block;
