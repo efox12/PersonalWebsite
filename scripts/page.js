@@ -2,7 +2,8 @@
 let title = document.getElementById("title");
 let navBar = document.getElementById("scroll_name");
 let scrollName = document.getElementById("name");
-let hamburger = document.getElementById("hamburger");
+let hamburger = document.getElementById("menuToggle");
+let burg = document.getElementsByClassName("burg");
 
 let nav = document.getElementById("nav");
 let nav0 = document.getElementById("nav0");
@@ -58,6 +59,7 @@ if(scrollTop < navBar.offsetTop){
 
     if(drawer.offsetWidth > 0){
         clicked = false;
+        collapse();
         drawer.style.width = "0%";
 
         drawer0.style.opacity = "0";
@@ -96,6 +98,7 @@ hamburger.addEventListener("click", function(){
 
     if(clicked){
         clicked = false;
+        collapse();
         drawer.style.width = "0%";
 
         drawer0.style.opacity = "0";
@@ -104,6 +107,7 @@ hamburger.addEventListener("click", function(){
         drawer3.style.opacity = "0";
     } else {
         clicked = true;
+        open();
         drawer.style.width = "40%";
 
         drawer0.style.opacity = "1";
@@ -125,6 +129,7 @@ window.addEventListener("scroll", function(){
 
         if(drawer.offsetWidth > 0){
             clicked = false;
+            collapse();
             drawer.style.width = "0%";
 
             drawer0.style.opacity = "0";
@@ -158,7 +163,7 @@ window.addEventListener("scroll", function(){
     updateYPos();
 });
 
-nav0.addEventListener("click tap", function(){
+nav0.addEventListener("click", function(){
     window.scroll({
     top: (about.offsetTop-100), 
     left: 0, 
@@ -166,7 +171,7 @@ nav0.addEventListener("click tap", function(){
     });
     updateYPos();
 });
-nav1.addEventListener("click tap", function(){
+nav1.addEventListener("click", function(){
     window.scroll({
     top: (portfolio.offsetTop-50), 
     left: 0, 
@@ -174,7 +179,7 @@ nav1.addEventListener("click tap", function(){
     });
     updateYPos();
 });
-nav2.addEventListener("click tap", function(){
+nav2.addEventListener("click", function(){
     window.scroll({
     top: (experience.offsetTop-50), 
     left: 0, 
@@ -182,7 +187,7 @@ nav2.addEventListener("click tap", function(){
     });
     updateYPos();
 });
-nav3.addEventListener("click tap", function(){
+nav3.addEventListener("click", function(){
     window.scroll({
     top: (contact.offsetTop-50), 
     left: 0, 
@@ -191,7 +196,6 @@ nav3.addEventListener("click tap", function(){
     updateYPos();
 });
 
-
 drawer0.addEventListener("click", function(){
     window.scroll({
     top: (about.offsetTop-100), 
@@ -199,6 +203,7 @@ drawer0.addEventListener("click", function(){
     behavior: 'smooth' 
     });
     clicked = false;
+    collapse();
     drawer.style.width = "0%";
     drawer0.style.opacity = "0";
     drawer1.style.opacity = "0";
@@ -213,6 +218,7 @@ drawer1.addEventListener("click", function(){
     behavior: 'smooth' 
     });
     clicked = false;
+    collapse();
     drawer.style.width = "0%";
     drawer0.style.opacity = "0";
     drawer1.style.opacity = "0";
@@ -227,6 +233,7 @@ drawer2.addEventListener("click", function(){
     behavior: 'smooth' 
     });
     clicked = false;
+    collapse();
     drawer.style.width = "0%";
     drawer0.style.opacity = "0";
     drawer1.style.opacity = "0";
@@ -241,6 +248,7 @@ drawer3.addEventListener("click", function(){
     behavior: 'smooth' 
     });
     clicked = false;
+    collapse();
     drawer.style.width = "0%";
     drawer0.style.opacity = "0";
     drawer1.style.opacity = "0";
@@ -248,6 +256,27 @@ drawer3.addEventListener("click", function(){
     drawer3.style.opacity = "0";
     updateYPos();
 });
+
+function open() {
+    burg[0].style.opacity = "1";
+    burg[0].style.transform = "rotate(45deg) translate(0px, 0px)";
+    
+    burg[1].style.opacity = "1";
+    burg[1].style.transform = "rotate(0deg) scale(0, 0)";
+
+    burg[2].style.opacity = "1";
+    burg[2].style.transform = "translate(-2px, 5px) rotate(-45deg)";
+}
+function collapse () {
+    burg[0].style.opacity = "1";
+    burg[0].style.transform = "rotate(0deg) translate(0px, 0px)";
+    
+    burg[1].style.opacity = "1";
+    burg[1].style.transform = "rotate(0deg) scale(1, 1)";
+
+    burg[2].style.opacity = "1";
+    burg[2].style.transform = "rotate(0deg) translate(0px, 0px)";
+}
 
 function updateYPos(){
     if(scrollTop > about.offsetTop-100 && scrollTop < portfolio.offsetTop-100){
@@ -331,60 +360,3 @@ function updateYPos(){
         drawer3.style.backgroundColor = "white";
     }
 }
-/*
-var touchsurface;
-let startX;
-let startY;
-let dist;
-let dist2;
-let threshold = 25; //required min distance traveled to be considered swipe
-let allowedTime = 200; // maximum time allowed to travel that distance
-let elapsedTime;
-let startTime;
-
-let body = document.getElementById("body");
-body.style.pointerEvents ="none";
-function handleswipe(isrightswipe, isSwipeLeft){
-    if (isrightswipe){
-        clicked = true;
-        drawer.style.width = "40%";
-        drawer0.style.opacity = "1";
-        drawer1.style.opacity = "1";
-        drawer2.style.opacity = "1";
-        drawer3.style.opacity = "1";
-    } else if (isSwipeLeft){
-        clicked = false;
-        drawer.style.width = "0%";
-        drawer0.style.opacity = "0";
-        drawer1.style.opacity = "0";
-        drawer2.style.opacity = "0";
-        drawer3.style.opacity = "0";
-    }
-}
-
-body.addEventListener('touchstart', function(e){
-    let touchobj = e.changedTouches[0]
-    dist = 0
-    startX = touchobj.pageX;
-    startY = touchobj.pageY;
-    startTime = new Date().getTime() // record time when finger first makes contact with surface
-    console.log("start "+startX)
-}, false)
-
-body.addEventListener('touchmove', function(e){
-    //e.preventDefault() // prevent scrolling when inside DIV
-}, false)
-
-body.addEventListener('touchend', function(e){
-    let touchobj = e.changedTouches[0]
-    dist = touchobj.pageX - startX; // get total dist traveled by finger while in contact with surface
-    dist2 = startX - touchobj.pageX;
-    elapsedTime = new Date().getTime() - startTime // get time elapsed
-    console.log("end "+touchobj.pageX)
-    // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
-    var swipeRightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
-    var swipeLeftBol = (elapsedTime <= allowedTime && dist2 >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
-    handleswipe(swipeRightBol, swipeLeftBol)
-    e.preventDefault()
-}, false) 
-*/

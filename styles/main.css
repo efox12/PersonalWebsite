@@ -309,10 +309,6 @@ footer {
         transition: opacity 250ms ease-in;
     }
 
-    #hamburger {
-        display: none;
-        opacity: 0;
-    }
     #drawer {
         display: none;
     }
@@ -481,12 +477,25 @@ footer {
         margin: 0 10% 0 10%;
     }
     
-    #hamburger {
+    #menuToggle{
         float: left;
-        object-fit: fill;
-        height: 30;
-        opacity: 0;
+        margin: 5 0 0 0;
+        vertical-align: center;
     }
+    #menuToggle span{
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin-bottom: 5px;
+        position: relative;
+        
+        background:black;
+        border-radius: 3px;        
+        transform-origin: 0px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+    }
+
     #name {
         margin: auto;
         width: fit-content;
@@ -545,7 +554,7 @@ footer {
         width: 0%;
         position: absolute;
         left: 0;
-        transition: all 250ms ease-in;
+        transition: all 150ms ease-in;
         overflow: hidden;
     }
     
