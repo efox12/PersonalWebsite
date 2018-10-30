@@ -62,7 +62,7 @@ h3 {
 
 /*about*/
 .about>h1{
-    margin: 0 5 0 5;
+    margin: 0;
     padding: 50 0 20 0;
     text-align: left;
 }
@@ -173,7 +173,7 @@ h3 {
     list-style: none;
 }
 .experience>h1{
-    margin: 0 5 0 5;
+    margin: 0;
     padding: 50 0 20 0;
     text-align: left;
 }
@@ -215,7 +215,7 @@ h3 {
     text-align: center;
 }
 .contactInfo>h1{
-    margin: 0 5 0 5;
+    margin: 0;
     padding: 50 0 20 0;
     text-align: left;
 }
@@ -362,7 +362,7 @@ footer {
     }
 
     #portfolio>h1{
-        margin: 0 5 0 5;
+        margin: 0;
         padding: 50 0 20 0;
         text-align: left;
     }
