@@ -27,6 +27,7 @@ let scrollTop = window.pageYOffset;
 const style = document.documentElement.style;
 
 /*-------------------initialize page----------------------*/
+
 //Fix some page resize bugs
 window.addEventListener("resize", function(){
     if(scrollTop > navBar.offsetTop){
@@ -57,14 +58,7 @@ if(scrollTop < navBar.offsetTop){
     hamburger.style.opacity = "0";
 
     if(drawer.offsetWidth > 0){
-        clicked = false;
         collapse();
-        drawer.style.width = "0%";
-
-        drawer0.style.opacity = "0";
-        drawer1.style.opacity = "0";
-        drawer2.style.opacity = "0";
-        drawer3.style.opacity = "0";
     }
     nav.style.display = "block";
     if(window.matchMedia("(max-width: 768px)").matches){
@@ -96,23 +90,9 @@ hamburger.addEventListener("click", function(){
     drawer.style.top = (navBar.offsetTop + navBar.offsetHeight)+'px';
 
     if(clicked){
-        clicked = false;
         collapse();
-        drawer.style.width = "0%";
-
-        drawer0.style.opacity = "0";
-        drawer1.style.opacity = "0";
-        drawer2.style.opacity = "0";
-        drawer3.style.opacity = "0";
     } else {
-        clicked = true;
-        open();
-        drawer.style.width = "40%";
-
-        drawer0.style.opacity = "1";
-        drawer1.style.opacity = "1";
-        drawer2.style.opacity = "1";
-        drawer3.style.opacity = "1";
+        open();  
     }
 });
 
@@ -127,14 +107,7 @@ window.addEventListener("scroll", function(){
         hamburger.style.opacity = "0";
 
         if(drawer.offsetWidth > 0){
-            clicked = false;
             collapse();
-            drawer.style.width = "0%";
-
-            drawer0.style.opacity = "0";
-            drawer1.style.opacity = "0";
-            drawer2.style.opacity = "0";
-            drawer3.style.opacity = "0";
         }
         nav.style.display = "block";
         if(window.matchMedia("(max-width: 768px)").matches){
@@ -162,101 +135,21 @@ window.addEventListener("scroll", function(){
     updateYPos();
 });
 
-nav0.addEventListener("click", function(){
-    window.scroll({
-    top: (about.offsetTop-100), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    updateYPos();
-});
-nav1.addEventListener("click", function(){
-    window.scroll({
-    top: (portfolio.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    updateYPos();
-});
-nav2.addEventListener("click", function(){
-    window.scroll({
-    top: (experience.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    updateYPos();
-});
-nav3.addEventListener("click", function(){
-    window.scroll({
-    top: (contact.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    updateYPos();
-});
-
 drawer0.addEventListener("click", function(){
-    window.scroll({
-    top: (about.offsetTop-100), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    clicked = false;
     collapse();
-    drawer.style.width = "0%";
-    drawer0.style.opacity = "0";
-    drawer1.style.opacity = "0";
-    drawer2.style.opacity = "0";
-    drawer3.style.opacity = "0";
-    updateYPos();
 });
 drawer1.addEventListener("click", function(){
-    window.scroll({
-    top: (portfolio.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    clicked = false;
     collapse();
-    drawer.style.width = "0%";
-    drawer0.style.opacity = "0";
-    drawer1.style.opacity = "0";
-    drawer2.style.opacity = "0";
-    drawer3.style.opacity = "0";
-    updateYPos();
 });
 drawer2.addEventListener("click", function(){
-    window.scroll({
-    top: (experience.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    clicked = false;
     collapse();
-    drawer.style.width = "0%";
-    drawer0.style.opacity = "0";
-    drawer1.style.opacity = "0";
-    drawer2.style.opacity = "0";
-    drawer3.style.opacity = "0";
-    updateYPos();
 });
 drawer3.addEventListener("click", function(){
-    window.scroll({
-    top: (contact.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    clicked = false;
     collapse();
-    drawer.style.width = "0%";
-    drawer0.style.opacity = "0";
-    drawer1.style.opacity = "0";
-    drawer2.style.opacity = "0";
-    drawer3.style.opacity = "0";
-    updateYPos();
 });
 
 function open() {
+    clicked = true;
     burg[0].style.opacity = "1";
     burg[0].style.transform = "rotate(45deg) translate(0px, 0px)";
     
@@ -265,8 +158,16 @@ function open() {
 
     burg[2].style.opacity = "1";
     burg[2].style.transform = "translate(-2px, 5px) rotate(-45deg)";
+
+    drawer.style.width = "40%";
+    drawer0.style.opacity = "1";
+    drawer1.style.opacity = "1";
+    drawer2.style.opacity = "1";
+    drawer3.style.opacity = "1";
 }
+
 function collapse () {
+    clicked = false;
     burg[0].style.opacity = "1";
     burg[0].style.transform = "rotate(0deg) translate(0px, 0px)";
     
@@ -275,6 +176,14 @@ function collapse () {
 
     burg[2].style.opacity = "1";
     burg[2].style.transform = "rotate(0deg) translate(0px, 0px)";
+
+    drawer.style.width = "0%";
+    drawer0.style.opacity = "0";
+    drawer1.style.opacity = "0";
+    drawer2.style.opacity = "0";
+    drawer3.style.opacity = "0";
+
+    updateYPos();
 }
 
 function updateYPos(){
