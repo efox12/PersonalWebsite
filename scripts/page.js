@@ -135,72 +135,20 @@ window.addEventListener("scroll", function(){
     updateYPos();
 });
 
-nav0.addEventListener("click", function(){
-    window.scroll({
-    top: (about.offsetTop-100), 
-    left: 0, 
-    behavior: 'smooth' 
+// JQuery allows for cross browser support of animated scroll
+$(function() {
+    var headerHeight = $('#scroll_name').height(); 
+    $('.mover').click(function (e) {
+        console.log("SUCCESS")
+        e.preventDefault();
+        var targetDiv =  $(this.hash);
+        $('html, body').animate({
+            scrollTop: targetDiv.offset().top - headerHeight
+        }, 750, 'swing');
+        updateYPos();
+        return false;
     });
-    updateYPos();
-});
-nav1.addEventListener("click", function(){
-    window.scroll({
-    top: (portfolio.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    updateYPos();
-});
-nav2.addEventListener("click", function(){
-    window.scroll({
-    top: (experience.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    updateYPos();
-});
-nav3.addEventListener("click", function(){
-    window.scroll({
-    top: (contact.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    updateYPos();
-});
-
-drawer0.addEventListener("click", function(){
-    window.scroll({
-    top: (about.offsetTop-100), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    collapse();
-});
-drawer1.addEventListener("click", function(){
-    window.scroll({
-    top: (portfolio.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    clicked = false;
-    collapse();
-});
-drawer2.addEventListener("click", function(){
-    window.scroll({
-    top: (experience.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    collapse();
-});
-drawer3.addEventListener("click", function(){
-    window.scroll({
-    top: (contact.offsetTop-50), 
-    left: 0, 
-    behavior: 'smooth' 
-    });
-    collapse();
-});
+})
 
 function open() {
     clicked = true;
