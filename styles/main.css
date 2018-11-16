@@ -8,6 +8,14 @@
     --SECONDARYTEXT: black;
 }
 
+/*text highlight colors*/
+::selection {
+    background: var(--HIGHLIGHT)
+  }
+::-moz-selection {
+    background: var(--HIGHLIGHT)
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -17,13 +25,12 @@ body {
     font-family: Montserrat;
     font-size: 100%;
 }
-::selection {
-    background: var(--HIGHLIGHT)
-  }
-::-moz-selection {
-    background: var(--HIGHLIGHT)
-}
 
+/*------------------------header----------------------*/
+.header h1 {
+    text-align: center;
+    margin: 0;
+}
 #nav {
     padding: 0;
     width: 100%;
@@ -44,11 +51,9 @@ body {
     border-bottom-color: rgba(0, 0, 0, 0);
     border-bottom-style: solid;
 }
-
 .mover {
     transition: all 250ms ease-in;
 }
-
 #resume:hover {
     display: block;
     cursor: pointer;
@@ -56,39 +61,25 @@ body {
     background-color: rgba(0,0,0,.01);
     border-color: var(--ACCENT);
 }
-
 #resume:active {
     color: var(--ACCENTLIGHT);
     background-color: rgba(0,0,0,0.02);
     border-color: var(--ACCENTLIGHT);
 }
-.header h1 {
-    text-align: center;
-    margin: 0;
-}
 
-.section h1 {
-    
-}
-h3 {
-    text-align: left;
-}
-.content {
-    width: 100%;
-}
-
+/*----------------------content------------------------*/
 .section{
     clear: both;
     background-color: var(--SECONDARY) !important;
     padding: 0 10%;
 }
-
 .end {
     height: 2%;
     border-bottom-width: 4px;
     border-bottom-color: var(--ACCENT);
     border-bottom-style: solid;
 }
+
 /*about*/
 .about>h1{
     margin: 0;
@@ -98,7 +89,6 @@ h3 {
 }
 
 /*portfolio*/
-
 .portfolio>li {
     display: inline-block;
     text-align: left;
@@ -111,25 +101,21 @@ h3 {
     position: relative;
     overflow: auto;
 }
-
 .portfolio>li:hover {
     box-shadow:0px 0px 5px rgba(0,0,0,.5);
     transition: box-shadow 250ms ease-in;
 }
-
 .portfolio li h3 {
     width: 100%;
     margin: 10 0 5 0;
     font-weight: bolder;
     text-align: left;
 }
-
 .portfolio li p {
     width: 100%;
     margin: 5 0 5 0;
     font-weight: normal;    
 }
-
 #tabs {
     background-image: url(../pictures/tabs.png);
     background-size: cover;
@@ -156,7 +142,6 @@ h3 {
 }
 #website {
     background-image: url(../pictures/website.png);
-
     background-size: cover;
 }
 #leaderboard {
@@ -167,17 +152,14 @@ h3 {
     background-image: url(../pictures/game.png);
     background-size: cover;
 }
-
 .space {
     height: 40;
 }
-
 .languages {
     display: block;
     padding: 0;
     margin: 5 0 5 0;
 }
-
 .portfolio .languages {
     display: block;
     padding: 0;
@@ -186,7 +168,6 @@ h3 {
     bottom: 7%;
     left: 7%;
 }
-
 .languages li {
     display: inline-block;
     border-color: rgba(0,0,0,.5);
@@ -207,11 +188,6 @@ h3 {
     text-align: center;
     overflow:auto;
 }
-
-#experience {
-    background-color: rgba(247, 38, 38, 0.285);
-}
-
 .work ul {
     list-style: none;
 }
@@ -220,14 +196,12 @@ h3 {
     padding: 40 0 10 0;
     text-align: left;
 }
-
 .experience h4{
     display: inline-block;
     vertical-align: bottom;
     margin: 0;
     width: 50%;
 }
-
 .date {
     vertical-align: bottom;
     float: right;
@@ -242,24 +216,13 @@ h3 {
     border-radius: 1px;
     border-top-style: solid;
 }
-
 .school>h3 {
     text-align: center;
     margin: 0 10%;
     padding-top: 20;
 }
 
-#school {
-    padding: 0 10%;
-    background-color: var(--SECONDARY);
-
-}
-
 /* contact */
-#contact {
-    background-color: rgba(31, 168, 31, 0.251);
-}
-
 .contactInfo {
     text-align: center;
 }
@@ -268,7 +231,6 @@ h3 {
     padding: 40 0 10 0;
     text-align: left;
 }
-
 .mail {
     display: inline-block;
     margin: 5px;
@@ -280,7 +242,6 @@ h3 {
     transition: all 250ms ease-in;
     padding: 20px;
 }
-
 .mail:hover {
     box-shadow:0px 0px 5px rgba(0,0,0,.5);
     border-color: var(--PRIMARY);
@@ -289,18 +250,18 @@ h3 {
     border-radius: 15px;
     transition: all 250ms ease-in;
 }
-
 .mail p {
     text-decoration-line: underline !important;
     text-decoration-color: var(--SECONDARYTEXT) !important;
     color: var(--SECONDARYTEXT);
 }
-
 .mail>img{
     object-fit: fill;
     width: 50px;
     height: auto;
 }
+
+/*footer*/
 footer {
     margin: 0px;
     padding: 10px;
@@ -310,10 +271,9 @@ footer {
     font-size: unset;
 }
 
-
-
-/*desktop*/
+/*-------------------------desktop-------------------------*/
 @media (min-width: 768px) {
+    /*header desktop*/
     header {
         padding: 50 0 0 0;
         margin: 0;
@@ -331,33 +291,29 @@ footer {
     .headerSpace {
         padding-top: 187px;
     }
-
     header h1 {
         font-size: 3rem;    
         padding: 0 0 10 0;
         width: 100%;
         text-align: center;
     }
-
     #scroll_name {
         text-align: center;
         float: left;
         padding: 0 10% 0 10%;
     }
-
     #name {
         opacity: 0;
         transition: opacity 250ms ease-in;
     }
-
     #drawer {
         display: none;
     }
 
+    /*nav bar desktop*/
     #nav {
         display: block;
     }
-
     #nav ul a {
         font-size: medium;
         font-weight: bold;
@@ -379,6 +335,7 @@ footer {
         border-bottom-color: var(--ACCENTLIGHT) !important;
     }
 
+    /*resume button dektop*/
     #resume {
         z-index: 1;
         display: block;
@@ -396,36 +353,30 @@ footer {
         border-radius: 5px;
     }
 
+    /*about desktop*/
     .about {
         padding-top: 0;
     }
-
     .about p {
         width: 61.8%;
     }
 
+    /*portfolio desktop*/
     .portfolio {
         text-align: center;
         margin: 0;
         padding: 0;
     }
-
-    #portfolio {
-        background-color: rgba(27, 36, 158, 0.281);
-    }
-
     #portfolio>h1{
         margin: 0;
         padding: 40 0 10 0;
         text-align: left;
     }
-
     .portfolio {
         display: grid;
         grid-template-columns: auto auto;
         grid-gap: 0;
     }
-
     .portfolio>li {
         display: inline-block;
         text-align: left;
@@ -438,7 +389,6 @@ footer {
         position: relative;
         overflow: auto;
     }
-
     .portfolio>li:hover {
         box-shadow:0px 0px 5px rgba(0,0,0,.5);
         transition: box-shadow 250ms ease-in;
@@ -448,7 +398,6 @@ footer {
         height: 20vw;
         margin: 5 0 5 0;
     }
-
     .github img{
         object-fit: fill;
         width: 40;
@@ -461,7 +410,6 @@ footer {
         opacity: 0;
         transition: all 150ms ease-in;
     }
-
     .portfolio>li:hover .github img{
         opacity: 1;
         transition: all 150ms ease-in;
@@ -479,7 +427,6 @@ footer {
         text-align: left;
         float: left;
     }
-
     .classes {
         list-style-image: url("list.svg");
         list-style-position: inside;
@@ -494,40 +441,37 @@ footer {
     }
 }
 
-/*mobile*/
+/*----------------------mobile--------------------*/
 @media (max-width: 768px) {
+    /*header mobile*/
     header {
         padding: 50px 0px 0px 0px;
         margin: 0;
         width: 100%;
         height: auto;
-    
+   
         background: var(--PRIMARY);
         color: var(--PRIMARYTEXT);
         box-shadow: 0px 0px 0px rgba(0,0,0,0);
-    
+
         position: absolute;
         top: 0;
         z-index: 1;
     }
-    
     .headerSpace {
         padding-top: 167px;
     }
-
     header h1 {
         font-size: 3rem;    
         padding: 0 0 10 0;
         width: 100%;
         text-align: center;
     }
-    
     #scroll_name {
         display: block;
         padding: 10 0 10 0;
         margin: 0 10% 0 10%;
     }
-    
     #menuToggle{
         float: left;
         margin: 5 0 0 0;
@@ -547,7 +491,6 @@ footer {
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                     opacity 0.55s ease;
     }
-
     #name {
         margin: auto;
         width: fit-content;
@@ -560,7 +503,6 @@ footer {
     #nav {
         display: block;
     }
-
     #nav ul {
         display: block;
         margin: 0;
@@ -574,7 +516,6 @@ footer {
         border-bottom-color: rgba(0, 0, 0, 0);
         border-bottom-style: solid;
     }
-
     #nav ul a {
         font-size: medium;
         display: inline-block;
@@ -588,7 +529,6 @@ footer {
         border-bottom-color: rgba(0,0,0,0);
         border-bottom-style: solid;
     }
-
     #nav ul a:hover {
         color: var(--ACCENTLIGHT) !important;
         border-bottom-color: var(--ACCENTLIGHT) !important;
@@ -613,7 +553,6 @@ footer {
     /*drawer mobile*/
     #drawer {
         display: block;
-        background: ghostwhite;
         margin: 0;
         padding: 0;
         width: 0%;
@@ -622,7 +561,6 @@ footer {
         transition: all 150ms ease-in;
         overflow: hidden;
     }
-    
     #drawer ul {
         display: block;
         width: 100%;
@@ -635,8 +573,7 @@ footer {
         white-space: nowrap;
         list-style-type: none;
         transition: all 250ms ease-in;
-    }
-    
+    }  
     #drawer ul a {
         display: block;
         margin: 0;
@@ -647,8 +584,7 @@ footer {
         cursor: pointer;
         transition: all 250ms ease-in;
         box-shadow: 0px -10px 0px -10px rgba(0,0,0,.5);
-    }
-    
+    }   
     #drawer ul a:hover {
         color: var(--ACCENT) !important;
     }
@@ -656,8 +592,7 @@ footer {
     /*about mobile*/
     .about {
         padding-top: 0px
-    }
-    
+    } 
     .about p {
         width: 100%;
     }
@@ -670,25 +605,20 @@ footer {
         text-align: center;
         margin: 0;
         padding: 0;
-    }
-    
+    } 
     #portfolio {
-        background-color: rgba(27, 36, 158, 0.281);
         padding: 0;
-    }
-    
+    } 
     #portfolio>h1{
         margin: 0;
         padding: 40 0 10 10%;
         text-align: left;
-    }
-    
+    }  
     .panel {
         width: 100%;
         height: 50vw;
         margin: 5 0 5 0;
     }
-    
     .github img{
         object-fit: fill;
         width: 40;
@@ -698,11 +628,11 @@ footer {
         right:7%;
         opacity: 1;
         transition: all 150ms ease-in;
-    }
-    
+    }  
     .portfolio .end {
         margin: 0 10%;
     }
+
     /*experience mobile*/
     .work {
         margin: 0;
@@ -713,8 +643,7 @@ footer {
         text-align: left;
         float: left;
     
-    }
-    
+    }  
     .classes {
         list-style-image: url("list.svg");
         list-style-position: inside;
@@ -725,6 +654,8 @@ footer {
         text-align: left;
         float: left;
     }
+
+    /*sizing fix for smaller screens*/
     @media (max-width: 350px) {
         #nav ul a {
             padding: 10px 5px 20px 5px;
