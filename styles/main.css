@@ -26,6 +26,9 @@ body {
     white-space: nowrap;
 }
 
+.mover {
+    transition: all 250ms ease-in;
+}
 
 #resume:hover {
     display: block;
@@ -51,16 +54,19 @@ h3 {
 .section{
     clear: both;
     background-color: white;
-    padding: 0 10% 5% 10%;
+    padding: 0 10% 2% 10%;
     border-top-width: 2px;
     border-top-color: black;
     border-top-style: solid;
 }
 
+.headerSpace {
+    padding-top: 187px;
+}
 /*about*/
 .about>h1{
     margin: 0;
-    padding: 50 0 20 0;
+    padding: 40 0 10 0;
     text-align: left;
 }
 
@@ -70,7 +76,7 @@ h3 {
     display: inline-block;
     text-align: left;
     margin: 0px;
-    padding: 10%;
+    padding: 7%;
     font-weight: bold;
     width: auto;
     height: auto;
@@ -135,10 +141,23 @@ h3 {
     background-size: cover;
 }
 
+.space {
+    height: 40;
+}
+
 .languages {
     display: block;
     padding: 0;
     margin: 5 0 5 0;
+}
+
+.portfolio .languages {
+    display: block;
+    padding: 0;
+    margin: 5 0 5 0;
+    position: absolute;
+    bottom: 7%;
+    left: 7%;
 }
 
 .languages li {
@@ -171,7 +190,7 @@ h3 {
 }
 .experience>h1{
     margin: 0;
-    padding: 50 0 20 0;
+    padding: 40 0 10 0;
     text-align: left;
 }
 
@@ -213,7 +232,7 @@ h3 {
 }
 .contactInfo>h1{
     margin: 0;
-    padding: 50 0 20 0;
+    padding: 40 0 10 0;
     text-align: left;
 }
 
@@ -265,7 +284,7 @@ footer {
 /*desktop*/
 @media (min-width: 768px) {
     header {
-        padding: 100 0 0 0;
+        padding: 50 0 0 0;
         margin: 0;
         width: 100%;
         height: auto;
@@ -341,7 +360,7 @@ footer {
     }
 
     .about {
-        padding-top: 250px
+        padding-top: 0;
     }
 
     .about p {
@@ -360,7 +379,7 @@ footer {
 
     #portfolio>h1{
         margin: 0;
-        padding: 50 0 20 0;
+        padding: 40 0 10 0;
         text-align: left;
     }
 
@@ -374,7 +393,7 @@ footer {
         display: inline-block;
         text-align: left;
         margin: 0px;
-        padding: 10%;
+        padding: 7%;
         font-weight: bold;
         width: auto;
         height: auto;
@@ -395,12 +414,12 @@ footer {
 
     .github img{
         object-fit: fill;
-        width: 10%;
+        width: 40;
         height: auto;
 
         position:absolute;
-        bottom:25;
-        right:25;
+        bottom:7%;
+        right:7%;
 
         opacity: 0;
         transition: all 150ms ease-in;
@@ -615,7 +634,7 @@ footer {
     
     #portfolio>h1{
         margin: 0;
-        padding: 50 0 20 10%;
+        padding: 40 0 10 10%;
         text-align: left;
     }
     
@@ -627,11 +646,11 @@ footer {
     
     .github img{
         object-fit: fill;
-        width: 10%;
+        width: 40;
         height: auto;
         position:absolute;
-        bottom:25;
-        right:25;
+        bottom:7%;
+        right:7%;
         opacity: 1;
         transition: all 150ms ease-in;
     }

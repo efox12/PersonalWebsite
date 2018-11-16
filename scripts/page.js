@@ -189,7 +189,25 @@ function collapse () {
 }
 
 function updateYPos(){
-    if(scrollTop > about.offsetTop-100 && scrollTop < portfolio.offsetTop-100){
+    if(scrollTop < about.offsetTop-navBar.offsetHeight){
+        nav0.style.backgroundColor = "ghostwhite";
+        nav0.style.borderBottom = "none";
+
+        nav1.style.backgroundColor = "ghostwhite";
+        nav1.style.borderBottom = "none";
+
+        nav2.style.backgroundColor = "ghostwhite";
+        nav2.style.borderBottom = "none";
+
+        nav3.style.backgroundColor = "ghostwhite";
+        nav3.style.borderBottom = "none";
+
+        drawer0.style.backgroundColor = "ghostwhite";
+        drawer1.style.backgroundColor = "ghostwhite";
+        drawer2.style.backgroundColor = "ghostwhite";
+        drawer3.style.backgroundColor = "ghostwhite";
+
+    } else if(scrollTop >= about.offsetTop-navBar.offsetHeight && scrollTop < portfolio.offsetTop-100){
         nav0.style.backgroundColor = "white";
         nav0.style.borderBottomWidth = "2px";
         nav0.style.borderBottomColor = "black";
@@ -209,8 +227,7 @@ function updateYPos(){
         drawer2.style.backgroundColor = "ghostwhite";
         drawer3.style.backgroundColor = "ghostwhite";
 
-
-    }  else if(scrollTop > portfolio.offsetTop-100 && scrollTop < experience.offsetTop-100){
+    }  else if(scrollTop >= portfolio.offsetTop-100 && scrollTop < experience.offsetTop-100){
         nav0.style.backgroundColor = "ghostwhite";
         nav0.style.borderBottom = "none";
 
@@ -230,7 +247,7 @@ function updateYPos(){
         drawer2.style.backgroundColor = "ghostwhite";
         drawer3.style.backgroundColor = "ghostwhite";
 
-    } else if(scrollTop > experience.offsetTop-100 && scrollTop < contact.offsetTop-400){
+    } else if(scrollTop >= experience.offsetTop-100 && scrollTop < contact.offsetTop-475){
         nav0.style.backgroundColor = "ghostwhite";
         nav0.style.borderBottom = "none";
 
