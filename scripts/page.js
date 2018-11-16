@@ -1,4 +1,5 @@
 "use strict"
+let root = document.documentElement;
 let navBar = document.getElementById("scroll_name");
 let scrollName = document.getElementById("name");
 let hamburger = document.getElementById("menuToggle");
@@ -27,6 +28,28 @@ let scrollTop = window.pageYOffset;
 const style = document.documentElement.style;
 
 /*-------------------initialize page----------------------*/
+
+let colorPallets = [
+    ["#202124","whitesmoke","#9f0000","whitesmoke","black","#bf0000","#b71c1ccc"],
+    ["#000051","whitesmoke","#00c853","whitesmoke","black","#00e676","#00e676cc"]
+]
+
+const colors = colorPallets[0];
+const PRIMARY = colors[0];
+const PRIMARYTEXT = colors[1];
+const ACCENT = colors[2];
+const SECONDARY = colors[3];
+const SECONDARYTEXT = colors[4];
+const ACCENTLIGHT = colors[5];
+const HIGHLIGHT = colors[6];
+
+root.style.setProperty('--PRIMARY', PRIMARY);
+root.style.setProperty('--PRIMARYTEXT', PRIMARYTEXT);
+root.style.setProperty('--ACCENT', ACCENT);
+root.style.setProperty('--SECONDARY', SECONDARY);
+root.style.setProperty('--SECONDARYTEXT', SECONDARYTEXT);
+root.style.setProperty('--ACCENTLIGHT', ACCENTLIGHT);
+root.style.setProperty('--HIGHLIGHT', HIGHLIGHT);
 
 //Fix some page resize bugs
 window.addEventListener("resize", function(){
@@ -88,7 +111,6 @@ updateYPos();
 /*-------------------listen for events----------------------*/
 hamburger.addEventListener("click", function(){
     drawer.style.top = (navBar.offsetTop + navBar.offsetHeight)+'px';
-
     if(clicked){
         collapse();
     } else {
@@ -139,13 +161,18 @@ window.addEventListener("scroll", function(){
 $(function() {
     var headerHeight = $('#scroll_name').height(); 
     $('.mover').click(function (e) {
-        console.log("SUCCESS")
         e.preventDefault();
         var targetDiv =  $(this.hash);
         $('html, body').animate({
             scrollTop: targetDiv.offset().top - headerHeight
         }, 750, 'swing');
-        updateYPos();
+
+        if(clicked){
+            collapse();
+        } else {
+            open();  
+        }
+
         return false;
     });
 })
@@ -154,12 +181,14 @@ function open() {
     clicked = true;
     burg[0].style.opacity = "1";
     burg[0].style.transform = "rotate(45deg) translate(0px, 0px)";
-    
+    burg[0].style.backgroundColor = "#7f0000";
+
     burg[1].style.opacity = "1";
     burg[1].style.transform = "rotate(0deg) scale(0, 0)";
 
     burg[2].style.opacity = "1";
     burg[2].style.transform = "translate(-2px, 5px) rotate(-45deg)";
+    burg[2].style.backgroundColor = ACCENT;
 
     drawer.style.width = "40%";
     drawer0.style.opacity = "1";
@@ -172,12 +201,14 @@ function collapse () {
     clicked = false;
     burg[0].style.opacity = "1";
     burg[0].style.transform = "rotate(0deg) translate(0px, 0px)";
-    
+    burg[0].style.backgroundColor = SECONDARY;
+
     burg[1].style.opacity = "1";
     burg[1].style.transform = "rotate(0deg) scale(1, 1)";
 
     burg[2].style.opacity = "1";
     burg[2].style.transform = "rotate(0deg) translate(0px, 0px)";
+    burg[2].style.backgroundColor = SECONDARY;
 
     drawer.style.width = "0%";
     drawer0.style.opacity = "0";
@@ -190,100 +221,92 @@ function collapse () {
 
 function updateYPos(){
     if(scrollTop < about.offsetTop-navBar.offsetHeight){
-        nav0.style.backgroundColor = "ghostwhite";
-        nav0.style.borderBottom = "none";
+        nav0.style.color = PRIMARYTEXT;
+        nav0.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav1.style.backgroundColor = "ghostwhite";
-        nav1.style.borderBottom = "none";
+        nav1.style.color = PRIMARYTEXT;
+        nav1.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav2.style.backgroundColor = "ghostwhite";
-        nav2.style.borderBottom = "none";
+        nav2.style.color = PRIMARYTEXT;
+        nav2.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav3.style.backgroundColor = "ghostwhite";
-        nav3.style.borderBottom = "none";
+        nav3.style.color = PRIMARYTEXT;
+        nav3.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        drawer0.style.backgroundColor = "ghostwhite";
-        drawer1.style.backgroundColor = "ghostwhite";
-        drawer2.style.backgroundColor = "ghostwhite";
-        drawer3.style.backgroundColor = "ghostwhite";
+        drawer0.style.color = PRIMARYTEXT;
+        drawer1.style.color = PRIMARYTEXT;
+        drawer2.style.color = PRIMARYTEXT;
+        drawer3.style.color = PRIMARYTEXT;
 
-    } else if(scrollTop >= about.offsetTop-navBar.offsetHeight && scrollTop < portfolio.offsetTop-100){
-        nav0.style.backgroundColor = "white";
-        nav0.style.borderBottomWidth = "2px";
-        nav0.style.borderBottomColor = "black";
-        nav0.style.borderBottomStyle = "solid";
+    } else if(scrollTop >= about.offsetTop-navBar.offsetHeight && scrollTop < portfolio.offsetTop-250){
+        nav0.style.color = ACCENT;
+        nav0.style.borderBottomColor = ACCENT;
 
-        nav1.style.backgroundColor = "ghostwhite";
-        nav1.style.borderBottom = "none";
+        nav1.style.color = PRIMARYTEXT;
+        nav1.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav2.style.backgroundColor = "ghostwhite";
-        nav2.style.borderBottom = "none";
+        nav2.style.color = PRIMARYTEXT;
+        nav2.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav3.style.backgroundColor = "ghostwhite";
-        nav3.style.borderBottom = "none";
+        nav3.style.color = PRIMARYTEXT;
+        nav3.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        drawer0.style.backgroundColor = "white";
-        drawer1.style.backgroundColor = "ghostwhite";
-        drawer2.style.backgroundColor = "ghostwhite";
-        drawer3.style.backgroundColor = "ghostwhite";
+        drawer0.style.color = ACCENT;
+        drawer1.style.color = PRIMARYTEXT;
+        drawer2.style.color = PRIMARYTEXT;
+        drawer3.style.color = PRIMARYTEXT;
 
-    }  else if(scrollTop >= portfolio.offsetTop-100 && scrollTop < experience.offsetTop-100){
-        nav0.style.backgroundColor = "ghostwhite";
-        nav0.style.borderBottom = "none";
+    }  else if(scrollTop >= portfolio.offsetTop-250 && scrollTop < experience.offsetTop-250){
+        nav0.style.color = PRIMARYTEXT;
+        nav0.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav1.style.backgroundColor = "white";
-        nav1.style.borderBottomWidth = "2px";
-        nav1.style.borderBottomColor = "black";
-        nav1.style.borderBottomStyle = "solid";
+        nav1.style.color = ACCENT;
+        nav1.style.borderBottomColor = ACCENT;
 
-        nav2.style.backgroundColor = "ghostwhite";
-        nav2.style.borderBottom = "none";
+        nav2.style.color = PRIMARYTEXT;
+        nav2.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav3.style.backgroundColor = "ghostwhite";
-        nav3.style.borderBottom = "none";
+        nav3.style.color = PRIMARYTEXT;
+        nav3.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        drawer0.style.backgroundColor = "ghostwhite";
-        drawer1.style.backgroundColor = "white";
-        drawer2.style.backgroundColor = "ghostwhite";
-        drawer3.style.backgroundColor = "ghostwhite";
+        drawer0.style.color = PRIMARYTEXT;
+        drawer1.style.color = ACCENT;
+        drawer2.style.color = PRIMARYTEXT;
+        drawer3.style.color = PRIMARYTEXT;
 
-    } else if(scrollTop >= experience.offsetTop-100 && scrollTop < contact.offsetTop-475){
-        nav0.style.backgroundColor = "ghostwhite";
-        nav0.style.borderBottom = "none";
+    } else if(scrollTop >= experience.offsetTop-250 && scrollTop < contact.offsetTop-525){
+        nav0.style.color = PRIMARYTEXT;
+        nav0.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav1.style.backgroundColor = "ghostwhite";
-        nav1.style.borderBottom = "none";
+        nav1.style.color = PRIMARYTEXT;
+        nav1.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav2.style.backgroundColor = "white";
-        nav2.style.borderBottomWidth = "2px";
-        nav2.style.borderBottomColor = "black";
-        nav2.style.borderBottomStyle = "solid";
+        nav2.style.color = ACCENT;
+        nav2.style.borderBottomColor = ACCENT;
 
-        nav3.style.backgroundColor = "ghostwhite";
-        nav3.style.borderBottom = "none";
+        nav3.style.color = PRIMARYTEXT;
+        nav3.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        drawer0.style.backgroundColor = "ghostwhite";
-        drawer1.style.backgroundColor = "ghostwhite";
-        drawer2.style.backgroundColor = "white";
-        drawer3.style.backgroundColor = "ghostwhite";
+        drawer0.style.color = PRIMARYTEXT;
+        drawer1.style.color = PRIMARYTEXT;
+        drawer2.style.color = ACCENT;
+        drawer3.style.color = PRIMARYTEXT;
     } else {
-        nav0.style.backgroundColor = "ghostwhite";
-        nav0.style.borderBottom = "none";
+        nav0.style.color = PRIMARYTEXT;
+        nav0.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav1.style.backgroundColor = "ghostwhite";
-        nav1.style.borderBottom = "none";
+        nav1.style.color = PRIMARYTEXT;
+        nav1.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav2.style.backgroundColor = "ghostwhite";
-        nav2.style.borderBottom = "none";
+        nav2.style.color = PRIMARYTEXT;
+        nav2.style.borderBottomColor = "rgba(0,0,0,0)";
 
-        nav3.style.backgroundColor = "white";
-        nav3.style.borderBottomWidth = "2px";
-        nav3.style.borderBottomColor = "black";
-        nav3.style.borderBottomStyle = "solid";
+        nav3.style.color = ACCENT;
+        nav3.style.borderBottomColor = ACCENT;
 
-        drawer0.style.backgroundColor = "ghostwhite";
-        drawer1.style.backgroundColor = "ghostwhite";
-        drawer2.style.backgroundColor = "ghostwhite";
-        drawer3.style.backgroundColor = "white";
+        drawer0.style.color = PRIMARYTEXT;
+        drawer1.style.color = PRIMARYTEXT;
+        drawer2.style.color = PRIMARYTEXT;
+        drawer3.style.color = ACCENT;
     }
 }
