@@ -30,7 +30,7 @@ const style = document.documentElement.style;
 /*-------------------initialize page----------------------*/
 
 let colorPallets = [
-    ["#202124","whitesmoke","#9f0000","whitesmoke","black","#bf0000","#b71c1ccc"],
+    ["#202124","whitesmoke","#bf0000","whitesmoke","black","#d70000","#b71c1ccc"],
     ["#000051","whitesmoke","#00c853","whitesmoke","black","#00e676","#00e676cc"]
 ]
 
@@ -73,7 +73,7 @@ window.addEventListener("resize", function(){
 
 scrollTop = window.pageYOffset;
 if(scrollTop < navBar.offsetTop){
-    header.style.boxShadow = "0px 0px 0px rgba(0,0,0,.25)";
+    header.style.boxShadow = "0px 0px 0px rgba(0,0,0,.5)";
     header.style.position = "absolute";
     header.style.top = "0px";
 
@@ -91,7 +91,7 @@ if(scrollTop < navBar.offsetTop){
     }
 }
 else if (scrollTop > navBar.offsetTop){
-    header.style.boxShadow = "0px 1px 5px rgba(0,0,0,.25)";
+    header.style.boxShadow = "0px 1px 5px rgba(0,0,0,.5)";
     header.style.position = "fixed";
 
     scrollName.style.opacity = "1"; 
@@ -121,7 +121,7 @@ hamburger.addEventListener("click", function(){
 window.addEventListener("scroll", function(){
     scrollTop = window.pageYOffset;
     if(scrollTop < navBar.offsetTop){
-        header.style.boxShadow = "0px 0px 0px rgba(0,0,0,.25)";
+        header.style.boxShadow = "0px 0px 0px rgba(0,0,0,.5)";
         header.style.position = "absolute";
         header.style.top = "0px";
 
@@ -140,7 +140,7 @@ window.addEventListener("scroll", function(){
 
     }
     else if (scrollTop > navBar.offsetTop){
-        header.style.boxShadow = "0px 1px 5px rgba(0,0,0,.25)";
+        header.style.boxShadow = "0px 1px 5px rgba(0,0,0,.5)";
         header.style.position = "fixed";
 
         scrollName.style.opacity = "1"; 

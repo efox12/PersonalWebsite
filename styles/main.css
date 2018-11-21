@@ -1,8 +1,8 @@
 :root {
     --PRIMARY: #202124;
     --PRIMARYTEXT: whitesmoke;
-    --ACCENT: #9f0000;
-    --ACCENTLIGHT: #bf0000;
+    --ACCENTLIGHT: #d70000;
+    --ACCENT: #bf0000;
     --HIGHLIGHT: #b71c1ccc;
     --SECONDARY: whitesmoke;
     --SECONDARYTEXT: black;
@@ -225,6 +225,7 @@ body {
 /* contact */
 .contactInfo {
     text-align: center;
+    margin-bottom: 15px;
 }
 .contactInfo>h1{
     margin: 0;
@@ -233,27 +234,25 @@ body {
 }
 .mail {
     display: inline-block;
-    margin: 5px;
+    margin: 15px;
     text-align: center;
     border-color: rgba(0,0,0,0);
     border-style: solid;
     border-width: 1px;
-    border-radius: 15px;
+    border-radius: 5px;
     transition: all 250ms ease-in;
-    padding: 20px;
+    padding: 10px;
 }
 .mail:hover {
     box-shadow:0px 0px 5px rgba(0,0,0,.5);
     border-color: var(--PRIMARY);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 15px;
     transition: all 250ms ease-in;
 }
 .mail p {
     text-decoration-line: underline !important;
     text-decoration-color: var(--SECONDARYTEXT) !important;
     color: var(--SECONDARYTEXT);
+    margin-bottom: 0;
 }
 .mail>img{
     object-fit: fill;
@@ -269,6 +268,7 @@ footer {
     background: var(--PRIMARY);
     color: var(--PRIMARYTEXT);
     font-size: unset;
+    box-shadow: 0px -1px 5px rgba(0,0,0,.5)
 }
 
 /*-------------------------desktop-------------------------*/
