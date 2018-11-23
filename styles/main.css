@@ -213,7 +213,6 @@ body {
     text-align: center;
     border-top-width: 1px;
     border-top-color: var(--PRIMARY);
-    border-radius: 1px;
     border-top-style: solid;
 }
 .school>h3 {
@@ -258,6 +257,45 @@ body {
     object-fit: fill;
     width: 50px;
     height: auto;
+}
+
+.info {
+    position: relative;
+    display: inline-block;
+}
+
+.info .infoText {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--PRIMARY);
+    color: whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    font-size: small;
+
+    position: absolute;
+    z-index: 1;
+    bottom: 95%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.info .infoText::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.info:hover .infotext {
+    visibility: visible;
+    transition-duration: .250ms;
+    transition-delay: 1s;
 }
 
 /*footer*/

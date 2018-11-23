@@ -220,7 +220,7 @@ function collapse () {
 }
 
 function updateYPos(){
-    if(scrollTop < about.offsetTop-navBar.offsetHeight){
+    if(scrollTop < about.offsetTop-navBar.offsetHeight-75){
         nav0.style.color = PRIMARYTEXT;
         nav0.style.borderBottomColor = "rgba(0,0,0,0)";
 
@@ -238,7 +238,7 @@ function updateYPos(){
         drawer2.style.color = PRIMARYTEXT;
         drawer3.style.color = PRIMARYTEXT;
 
-    } else if(scrollTop >= about.offsetTop-navBar.offsetHeight && scrollTop < portfolio.offsetTop-250){
+    } else if(scrollTop >= about.offsetTop-navBar.offsetHeight-75 && scrollTop < portfolio.offsetTop-250){
         nav0.style.color = ACCENT;
         nav0.style.borderBottomColor = ACCENT;
 
