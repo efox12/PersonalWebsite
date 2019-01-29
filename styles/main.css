@@ -58,9 +58,9 @@ body {
 #resume:hover {
     display: block;
     cursor: pointer;
-    color: var(--ACCENT);
+    color: var(--ACCENTLIGHT);
     background-color: rgba(0,0,0,.01);
-    border-color: var(--ACCENT);
+    border-color: var(--ACCENTLIGHT);
 }
 #resume:active {
     color: var(--ACCENTEXTRALIGHT);
