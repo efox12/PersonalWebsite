@@ -2,6 +2,7 @@
     --PRIMARY: #202124;
     --PRIMARYTEXT: whitesmoke;
     --ACCENTLIGHT: #d70000;
+    --ACCENTEXTRALIGHT: #ff0000;
     --ACCENT: #bf0000;
     --HIGHLIGHT: #b71c1ccc;
     --SECONDARY: whitesmoke;
@@ -62,9 +63,9 @@ body {
     border-color: var(--ACCENT);
 }
 #resume:active {
-    color: var(--ACCENTLIGHT);
+    color: var(--ACCENTEXTRALIGHT);
     background-color: rgba(0,0,0,0.02);
-    border-color: var(--ACCENTLIGHT);
+    border-color: var(--ACCENTEXTRALIGHT);
 }
 
 /*----------------------content------------------------*/
