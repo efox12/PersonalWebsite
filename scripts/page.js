@@ -120,7 +120,7 @@ hamburger.addEventListener("click", function(){
 
 window.addEventListener("scroll", function(){
     scrollTop = window.pageYOffset;
-    if(scrollTop < navBar.offsetTop){
+    if(scrollTop < navBar.offsetTop-1){
         header.style.boxShadow = "0px 0px 0px rgba(0,0,0,.5)";
         header.style.position = "absolute";
         header.style.top = "0px";
@@ -139,7 +139,7 @@ window.addEventListener("scroll", function(){
         }
 
     }
-    else if (scrollTop > navBar.offsetTop){
+    else if (scrollTop > navBar.offsetTop-1){
         header.style.boxShadow = "0px 1px 5px rgba(0,0,0,.5)";
         header.style.position = "fixed";
 
@@ -166,8 +166,9 @@ $(function() {
         $('html, body').animate({
             scrollTop: targetDiv.offset().top - headerHeight
         }, 750, 'swing');
-
-        if(clicked){
+        
+        scrollTop = window.pageYOffset;
+        if(clicked || scrollTop < navBar.offsetTop){
             collapse();
         } else {
             open();  
