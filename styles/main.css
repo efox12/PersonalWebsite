@@ -457,11 +457,10 @@ footer {
 
     /*experience*/
     .work {
-        margin-left: 10px;
-        margin-right: 10%;
+        margin: 0 8% 0 0%;
         padding: 0;
         max-width: 50%;
-        
+        list-style: none;
         display: block;
         text-align: left;
         float: left;
