@@ -467,7 +467,7 @@ footer {
     }
     .classes {
         list-style-image: url("list.svg");
-        list-style-position: inside;
+        list-style-position: outside;
         margin-left: 10px;
         margin-right: 10px;
         padding: 0;
@@ -476,6 +476,9 @@ footer {
         text-align: left;
         float: left;
         margin: 0 0 2% 0;
+    }
+    .classes li {
+        margin-left: 25px;
     }
 }
 
@@ -684,13 +687,17 @@ footer {
     }  
     .classes {
         list-style-image: url("list.svg");
-        list-style-position: inside;
+        list-style-position: outside;
         margin: 0 0 5% 0;
         padding: 0;
         display: block;
         max-width: 400;
         text-align: left;
         float: left;
+    }
+
+    .classes li {
+        margin-left: 25px;
     }
 
     /*sizing fix for smaller screens*/
