@@ -52,6 +52,7 @@ body {
     border-bottom-color: rgba(0, 0, 0, 0);
     border-bottom-style: solid;
 }
+
 .mover {
     transition: all 250ms ease-in;
 }
@@ -169,6 +170,11 @@ body {
     bottom: 7%;
     left: 7%;
 }
+.portfolio>li>a {
+    color: var(--SECONDARYTEXT);
+    text-decoration: none;
+}
+
 .languages li {
     display: inline-block;
     border-color: rgba(0,0,0,.5);
@@ -373,6 +379,11 @@ footer {
         color: var(--ACCENTLIGHT) !important;
         border-bottom-color: var(--ACCENTLIGHT) !important;
     }
+    @-moz-document url-prefix() {
+        #nav ul a {
+            border-bottom-width: 3px;
+        }
+    }
 
     /*resume button dektop*/
     #resume {
@@ -574,7 +585,11 @@ footer {
         color: var(--ACCENTLIGHT) !important;
         border-bottom-color: var(--ACCENTLIGHT) !important;
     }
-
+    @-moz-document url-prefix() {
+        #nav ul a {
+            border-bottom-width: 3px;
+        }
+    }
     /*resume button mobile*/
     #resume {
         display: block;

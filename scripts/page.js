@@ -80,7 +80,7 @@ if(scrollTop < navBar.offsetTop){
     scrollName.style.opacity = "0";
     hamburger.style.opacity = "0";
 
-    if(drawer.offsetWidth > 0){
+    if(drawer.offsetWidth > 0 && window.matchMedia("(max-width: 768px)").matches){
         collapse();
     }
     nav.style.display = "block";
@@ -168,12 +168,13 @@ $(function() {
         }, 750, 'swing');
         
         scrollTop = window.pageYOffset;
-        if(clicked || scrollTop < navBar.offsetTop){
-            collapse();
-        } else {
-            open();  
+        if(window.matchMedia("(max-width: 768px)").matches){
+            if(clicked || scrollTop < navBar.offsetTop){
+                collapse();
+            } else {
+                open();  
+            }
         }
-
         return false;
     });
 })
